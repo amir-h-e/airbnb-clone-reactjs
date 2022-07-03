@@ -1,38 +1,342 @@
-.App {
-  text-align: center;
+/* Header */
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  background-color: white;
+  z-index: 100;
+  width: 100%;
+}
+.header_icon {
+  object-fit: contain;
+  height: 100px;
+  margin-left: 20px;
+}
+.header_center {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  max-width: fit-content;
+  padding: 20px;
+  margin-left: 100px;
+  height: 30px;
+  border: 1px solid lightgray;
+  border-radius: 999px;
+}
+.header_center > input {
+  border: none;
+  outline-width: 0;
+  /* width: 250px; */
+}
+.header_right {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 15vw;
+  margin-right: 30px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Home */
+
+.home_section {
+  display: flex;
+  padding: 30px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
+/* Banner */
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.banner {
+  background: url("https://media.cntraveler.com/photos/5db1d0dd11c1e500092e7133/master/pass/airbnb-ski-aspen-28328347.jpg")
+    center center;
+  height: 50vh;
+  position: relative;
+  margin-bottom: 30px;
+}
+.banner_search {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+.banner_searchButton {
+  background-color: white !important;
+  font-weight: 900 !important;
+  text-transform: inherit !important;
+  color: #ff7779 !important;
+}
+.banner_info {
+  background-color: black;
   color: white;
+  padding-top: 12vh;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-bottom: 30px;
+  width: 384px;
+}
+.banner_info > h5 {
+  margin: 20px 0;
+}
+.banner_info > Button {
+  background-color: #ff7779;
+  color: white;
+  text-transform: inherit;
+  font-weight: 600;
+}
+.banner_info > Button:hover {
+  background-color: white;
+  color: #ff7779;
 }
 
-.App-link {
-  color: #61dafb;
+/* Search */
+
+.search {
+  position: absolute;
+  top: 35px;
+  left: 25%;
+  z-index: 5;
+  /* width: 100vw; */
+}
+.search > h2 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 559px;
+  padding: 10px;
+  background-color: white;
+  position: absolute;
+  left: 0;
+  top: 346px;
+}
+.search > input {
+  width: 559px;
+  padding: 20px;
+  position: absolute;
+  left: 0;
+  height: 30px;
+  top: 397px;
+  border: none;
+}
+.search > input:focus {
+  outline-width: 0;
+}
+.search > Button {
+  position: absolute;
+  left: 0;
+  top: 437px;
+  text-transform: inherit !important;
+  background-color: #ff7779;
+  color: white;
+  width: 559px;
+}
+.search > Button:hover {
+  background-color: white;
+  color: #ff7779;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Card */
+
+.card {
+  margin: 10px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0px 6px 18px -9px rgba(0, 0, 0, 0.75);
+  transition: transform 100ms ease-in;
+  cursor: pointer;
+}
+.card:hover {
+  transform: scale(1.07);
+}
+.card > img {
+  object-fit: fill;
+  min-width: 300px;
+  min-height: 200px;
+  width: 100%;
+}
+.card_info {
+  margin-top: -9px;
+  border-radius: 10px;
+  padding: 20px;
+  padding-top: 20px;
+  border: 1;
+}
+.card_info > h2 {
+  font-size: 18px;
+  font-weight: 600;
+}
+.card_info > h4 {
+  font-size: 14px;
+  font-weight: 400;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+/* Search Page */
+
+.searchPage_info {
+  padding: 20px;
+}
+.searchPage_info > p {
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+.searchPage_info > h1 {
+  margin-bottom: 30px;
+}
+.searchPage_info > Button {
+  border-radius: 30px;
+  text-transform: inherit;
+  margin: 5px;
+}
+
+/* SearchResult */
+
+.searchResult {
+  display: flex;
+  position: relative;
+  margin: 20px;
+  padding: 20px;
+  border-bottom: 1px solid lightgray;
+  opacity: 1;
+  cursor: pointer;
+}
+.searchResult:hover {
+  opacity: 0.8;
+}
+.searchResult > img {
+  /* max-width: 30%; */
+  height: 200px;
+  width: 350px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.searchResult_info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-left: 20px;
+}
+.searchResult_heart {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+}
+.searchResult_infoTop {
+  width: 40vw;
+}
+.searchResult_infoTop > h3 {
+  font-weight: 400;
+  margin-top: 10px;
+}
+.searchResult_infoTop > p {
+  margin-top: 10px;
+  font-size: 13px;
+  color: gray;
+}
+.searchResult_infoBottom {
+  display: flex;
+  justify-content: space-between;
+}
+.searchResult-stars {
+  display: flex;
+  align-items: center;
+}
+.searchResult-star {
+  color: red;
+}
+.searchResult_price {
+  position: absolute;
+  bottom: 20px;
+  right: 30px;
+}
+.searchResult_price > p {
+  text-align: right;
+}
+
+/* Footer */
+
+.footer {
+  border-top: 1px solid lightgray;
+  padding: 20px;
+  background-color: #f7f7f7;
+  text-align: center;
+}
+.footer > p {
+  padding: 5px;
+  font-size: 14px;
+}
+@media (max-width: 1025px) {
+  .header_center {
+    margin-left: 0;
   }
-  to {
-    transform: rotate(360deg);
+}
+@media (max-width: 990px) {
+  /* Banner */
+
+  .banner_info {
+    padding-top: 10vh;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 30px;
+    width: 384px;
+  }
+  .banner_info > h1 {
+    font-size: 25px;
+  }
+
+  /* Card */
+
+  .card > img {
+    object-fit: fill;
+    min-width: 200px;
+    min-height: 100px;
+    width: 100%;
+  }
+  .card_info {
+    margin-top: -4px;
+  }
+  .card_info > h2 {
+    font-size: 17px;
+    font-weight: 600;
+  }
+  .card_info > h4 {
+    font-size: 13px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+  }
+
+  /* Search Result */
+
+  .searchResult > img {
+    width: 250px;
+    height: 150px;
+  }
+  .searchResult_infoTop > h3 {
+    font-size: 20px;
+    font-weight: 400;
+    margin-top: 10px;
+  }
+  .searchResult_infoTop > p {
+    margin-top: 0;
+  }
+  .searchResult_infoTop > p:last-child {
+    margin-top: 5px;
+  }
+
+  .searchResult-stars {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+  }
+  .searchResult-star {
+    color: red;
+  }
+  .searchResult_price {
+    position: absolute;
+    bottom: 5px;
+    right: 30px;
+  }
+  .searchResult_price > h2 {
+    font-size: 20px;
   }
 }
